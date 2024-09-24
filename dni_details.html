@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Argentina</title>
+    <link rel="stylesheet" href="stylesheets/navbar.css">
+    <link rel="stylesheet" href="stylesheets/details.css">
+    <link rel="shortcut icon" href="res/logo.png" type="image/x-icon">
+    <link rel="preload" href="res/Jaldi-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <script src="scripts/config-dni.js"></script>
+    <script src="scripts/qr-generator.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/pkoretic/pdf417-generator@master/lib/libbcmath.js"
+        type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/gh/pkoretic/pdf417-generator@master/lib/bcmath.js"
+        type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/gh/pkoretic/pdf417-generator@master/lib/pdf417.js"
+        type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="back-arrow-btn" onclick="window.location.href = '/'">
+            <svg id="back-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                    d="M10.78 19.03a.75.75 0 01-1.06 0l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 111.06 1.06L5.81 11.5h14.44a.75.75 0 010 1.5H5.81l4.97 4.97a.75.75 0 010 1.06z">
+                </path>
+            </svg>
+        </div>
+
+        <h1 id="title">Dni Digital - Detalle</h1>
+    </div>
+
+    <div id="img-and-mrz-container">
+        <img src="res/default-dni.png" alt="details image" id="dni-image">
+        <canvas id="dni-qr"></canvas>
+    </div>
+    <div id="details-container">
+        <div class="single-detail">
+            <a class="detail-title"></a>
+            <a id="dni-number"></a>
+        </div>
+    </div>
+    <script>generateQR(); config();</script>
+</body>
+
+</html>
